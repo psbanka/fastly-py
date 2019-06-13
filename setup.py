@@ -1,6 +1,9 @@
 from setuptools import setup
 exec(open('fastly/_version.py').read())
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setup(
     name="fastly",
     version=__version__,
@@ -8,9 +11,10 @@ setup(
     author_email="support@fastly.com",
     description="Fastly python API",
     keywords="fastly api",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://github.com/fastly/fastly-py",
     packages=['fastly'],
-    long_description=open('README.md').read(),
     install_requires=[
         'six',
     ],
